@@ -24,5 +24,12 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
+      - name: Start Test Marker
+        run: echo "RUN CODEI TESTS"
+
       - name: Run Tests
         run: pytest
+
+      - name: End Test Marker
+        run: echo "CODEI TESTS COMPLETE"
+        if: always()
